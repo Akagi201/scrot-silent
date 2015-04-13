@@ -152,7 +152,7 @@ scrot_grab_shot(void)
 {
   Imlib_Image im;
 
-  if (! opt.silent) XBell(disp, 0);
+  XBell(disp, 0);
   im =
     gib_imlib_create_image_from_drawable(root, 0, 0, 0, scr->width,
                                          scr->height, 1);
@@ -365,7 +365,7 @@ scrot_sel_and_grab_image(void)
     if ((ry + rh) > scr->height)
       rh = scr->height - ry;
 
-    if (! opt.silent) XBell(disp, 0);
+    XBell(disp, 0);
     im = gib_imlib_create_image_from_drawable(root, 0, rx, ry, rw, rh, 1);
   }
   return im;
